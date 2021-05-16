@@ -1,11 +1,17 @@
+import 'react-native-gesture-handler';
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StatusBar } from 'react-native';
 import firebase from './src/services/firebaseConnection';
+import { NavigationContainer } from '@react-navigation/native';
 
-export default function finanstx() {
+import Routes from './src/routes';
+
+
+export default function App() {
  return (
-   <View>
-     <Text>Hello world</Text>
-   </View>
+   <NavigationContainer>
+     <StatusBar backgroundColor="#131313" barStyle="light-content" />
+    <Routes />
+   </NavigationContainer>
   );
 }
