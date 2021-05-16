@@ -10,9 +10,14 @@ import {
 export default function SignIn() {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
-  const { user } = useContext(AuthContext);
+  const { signIn } = useContext(AuthContext);
+
 
   const navigation = useNavigation();  
+
+  function handleSignIn(){
+    signIn(email, senha);
+  }
 
 
  return (
@@ -40,7 +45,7 @@ export default function SignIn() {
           />
         </AreaInput>
 
-        <SubmitButton onPress={() => console.log(user)}>
+        <SubmitButton onPress={handleSignIn}>
           <SubmitText>
             Acessar
           </SubmitText>
