@@ -7,6 +7,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import Routes from './src/routes';
 import AuthProvider from './src/contents/auth';
 
+// remover warning de console
+console.disableYellowBox=true;
+
 
 export default function App() {
  return (
