@@ -73,9 +73,17 @@ function AuthProvider({ children }){
         await AsyncStorage.setItem('Auth_user', JSON.stringify(data));
     }
 
+    async function signOut(){
+        await firebase.auth().signOut();
+        await AsyncStorage.clear()
+        .then( () => {
+            setUser(null);
+        });
+    }
+
     return(
         //!!user converter para boolean..caso tenha algum dado ficará com true, senao fica como false
-        <AuthContext.Provider value={{ signed: !!user ,user, load, signup, signIn }}>
+        <AuthContext.Provider value={{ signed: !!user ,user, load, signup, signIn, signOut }}>
             {children}
         </AuthContext.Provider>
     );
