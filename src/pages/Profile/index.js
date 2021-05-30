@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
-import { View, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import Header from '../../components/Header';
 
 import { 
   Container, Nome, Newlink, NewText, Logout, LogoutText
@@ -14,6 +14,7 @@ export default function Profile() {
 
  return (
    <Container>
+     <Header />
        <Nome>{user && user.nome}</Nome>
 
        <Newlink onPress={() =>  navigation.navigate('New') }>
